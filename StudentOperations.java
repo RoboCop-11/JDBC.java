@@ -79,10 +79,4 @@ public class StudentOperations {
                         rs.getFloat("CGPA"));
             }
 
-        } catch (SQLException e) {
-            System.out.println(" Failed to retrieve students.");
-            e.printStackTrace();
-        }
-    }
-}
-
+        } 
