@@ -56,32 +56,4 @@ public class StudentOperations {
         }
     }
 
-    /**
-     * Displays all student records from the database
-     */
-    public void viewStudents() {
-        try (
-                Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM students")
-        ) {
-            // Display records
-            System.out.println("\n--- Student Records ---");
-            System.out.printf("%-10s %-20s %-10s %-10s %-5s%n", "PRN", "Name", "Branch", "Batch", "CGPA");
-            System.out.println("-----------------------------------------------------------");
-
-            while (rs.next()) {
-                System.out.printf("%-10d %-20s %-10s %-10s %-5.2f%n",
-                        rs.getInt("PRN"),
-                        rs.getString("Name"),
-                        rs.getString("Branch"),
-                        rs.getString("Batch"),
-                        rs.getFloat("CGPA"));
-            }
-
-        } catch (SQLException e) {
-            System.out.println(" Failed to retrieve students.");
-            e.printStackTrace();
-        }
-    }
-}
+    
