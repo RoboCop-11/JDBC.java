@@ -56,4 +56,12 @@ public class StudentOperations {
         }
     }
 
-    
+    /**
+     * Displays all student records from the database
+     */
+    public void viewStudents() {
+        try (
+                Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT * FROM students")
+        )
