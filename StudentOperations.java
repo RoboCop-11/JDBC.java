@@ -64,4 +64,11 @@ public class StudentOperations {
                 Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * FROM students")
-        )
+        ) {
+            // Display records
+            System.out.println("\n--- Student Records ---");
+            System.out.printf("%-10s %-20s %-10s %-10s %-5s%n", "PRN", "Name", "Branch", "Batch", "CGPA");
+            System.out.println("-----------------------------------------------------------");
+
+            
+
